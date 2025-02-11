@@ -25,9 +25,10 @@ class Livros: #Classe Livros
 
     def emprestar_livros (self,titulo,nome,leitor):
 
-        cadastro_leitor = leitor.verifica_cadastro(nome)
+        cadastro_leitor = leitor.verifica_cadastro(nome) #chamada da função para verificar se está cadastrado
         retorno = self.verificador_de_estoque(titulo)
-
+        if cadastro_leitor == False:
+            print("Leitor não cadastrado, gentileza primeiro realizar o cadastro!")
         for livro in self.livros:
             if retorno == True and cadastro_leitor == True:
                 print(f"O Livro {livro['titulo']} está sendo emprestado para {nome}.")
@@ -35,6 +36,10 @@ class Livros: #Classe Livros
                 return
             
         print("Infelizmente esse titulo não está disponivel para emprestimo")
+
+    
+    
+
 
 
 class Leitor:
