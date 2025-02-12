@@ -33,6 +33,7 @@ class Livros: #Classe Livros
             if retorno == True and cadastro_leitor == True:
                 print(f"O Livro {livro['titulo']} está sendo emprestado para {nome}.")
                 livro['status'] = 'emprestado'
+                leitor.associar_livro_ao_leitor(nome,titulo)
                 return
             
         print("Infelizmente esse titulo não está disponivel para emprestimo")
@@ -67,6 +68,16 @@ class Leitor:
                 return True
         return False
 
+    def associar_livro_ao_leitor(self,nome,titulo): # Função quefaz vinculo do nome do livro ao leitor que está com ele no momento
+        nome = nome.strip().lower()
+
+        for leitor in self.leitores_cadastrados:
+            if leitor['nome'].strip().lower() == nome:
+                if 'livros_em_emprestimo' not in leitor:
+                    leitor['livros_em_emprestimo'] = []
+                leitor['livros_em_emprestimo'].append(titulo)
+                print(self.leitores_cadastrados)
+
 
 
 #Parte da execução
@@ -76,7 +87,7 @@ leitor =Leitor()
 leitor.cadastrar_leitor("PedrinhoBH")
 livros.cadastrar_livros("Turma da Monica", "Mauricio de Souza", 1990)
 livros.emprestar_livros("Turma da Monica","PedrinhoBH",leitor)
-livros.devolver_livros("Turma da Monica")
+#livros.devolver_livros("Turma da Monica")
 
 #Pessoa = Leitor("Pedrinho BH")
 #Pessoa.cadastrar_leitor()
