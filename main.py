@@ -23,7 +23,7 @@ class Livros: #Classe Livros
 
  
 
-    def emprestar_livros (self,titulo,nome,leitor):
+    def emprestar_livros (self,titulo,nome,leitor,livros):
 
         cadastro_leitor = leitor.verifica_cadastro(nome) #chamada da função para verificar se está cadastrado
         retorno = self.verificador_de_estoque(titulo)
@@ -33,7 +33,7 @@ class Livros: #Classe Livros
             if retorno == True and cadastro_leitor == True:
                 print(f"O Livro {livro['titulo']} está sendo emprestado para {nome}.")
                 livro['status'] = 'emprestado'
-                leitor.associar_livro_ao_leitor(nome,titulo)
+                livros.associar_leitor_ao_livro(nome,titulo)
                 return
             
         print("Infelizmente esse titulo não está disponivel para emprestimo")
@@ -45,6 +45,17 @@ class Livros: #Classe Livros
             if retorno == False:
                 print(f"O livro {livro['titulo']} atualmente emprestado para {leitor['nome']}")  
                 livro['status'] = 'disponivel'
+
+    def associar_leitor_ao_livro(self,nome,titulo):
+        titulo = titulo.strip().lower()
+
+        for livro in self.livros:
+            if livro['titulo'].strip().lower() == titulo:
+                if 'emprestado_a' not in livro:
+                    livro['emprestado_a'] = []
+                livro['emprestado_a'].append(nome)
+                print(self.livros)
+
 
 
 
@@ -68,7 +79,7 @@ class Leitor:
                 return True
         return False
 
-    def associar_livro_ao_leitor(self,nome,titulo): # Função quefaz vinculo do nome do livro ao leitor que está com ele no momento
+    #def associar_livro_ao_leitor(self,nome,titulo): # Função que faz vinculo do nome do livro ao leitor que está com ele no momento
         nome = nome.strip().lower()
 
         for leitor in self.leitores_cadastrados:
@@ -80,13 +91,17 @@ class Leitor:
 
 
 
+    
+
+
+
 #Parte da execução
 
 livros =Livros()
 leitor =Leitor()
 leitor.cadastrar_leitor("PedrinhoBH")
 livros.cadastrar_livros("Turma da Monica", "Mauricio de Souza", 1990)
-livros.emprestar_livros("Turma da Monica","PedrinhoBH",leitor)
+livros.emprestar_livros("Turma da Monica","PedrinhoBH",leitor,livros)
 #livros.devolver_livros("Turma da Monica")
 
 #Pessoa = Leitor("Pedrinho BH")
