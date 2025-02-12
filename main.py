@@ -40,14 +40,10 @@ class Livros: #Classe Livros
 
     def devolver_livros(self,titulo):
         retorno =self.verificador_de_estoque(titulo)
-        if retorno == False:
-            print(f"O livro {livro['titulo']} atualmente emprestado para {leitor['nome']}")  
-            livro['status'] = 'disponivel'
-
-            
-
-        
-    
+        for livro in self.livros:
+            if retorno == False:
+                print(f"O livro {livro['titulo']} atualmente emprestado para {leitor['nome']}")  
+                livro['status'] = 'disponivel'
 
 
 
