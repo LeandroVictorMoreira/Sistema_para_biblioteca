@@ -19,7 +19,7 @@ class Livros: #Classe Livros
                     print(f"O Livro {livro['titulo']} está {livro['status']}")
                     return True
 
-        print("Esse livro não está disponível em nosso estoque no momento!") 
+        return False 
 
  
 
@@ -37,7 +37,16 @@ class Livros: #Classe Livros
             
         print("Infelizmente esse titulo não está disponivel para emprestimo")
 
-    
+
+    def devolver_livros(self,titulo):
+        retorno =self.verificador_de_estoque(titulo)
+        if retorno == False:
+            print(f"O livro {livro['titulo']}")  
+            livro['status'] = 'disponivel'
+
+            
+
+        
     
 
 
@@ -71,7 +80,7 @@ leitor =Leitor()
 leitor.cadastrar_leitor("PedrinhoBH")
 livros.cadastrar_livros("Turma da Monica", "Mauricio de Souza", 1990)
 livros.emprestar_livros("Turma da Monica","PedrinhoBH",leitor)
-
+livros.devolver_livros("Turma da Monica")
 
 #Pessoa = Leitor("Pedrinho BH")
 #Pessoa.cadastrar_leitor()
