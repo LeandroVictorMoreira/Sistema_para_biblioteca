@@ -54,7 +54,7 @@ class Livros: #Classe Livros
                 if 'emprestado_a' not in livro:
                     livro['emprestado_a'] = []
                 livro['emprestado_a'].append(nome)
-                print(self.livros)
+                print(self.livros) #tester
 
 
 
