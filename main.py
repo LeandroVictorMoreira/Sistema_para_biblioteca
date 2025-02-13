@@ -37,7 +37,7 @@ class Livros: #Classe Livros
                 return
          
         print("Infelizmente esse titulo não está disponivel para emprestimo")
-        return False
+         
 
     def devolver_livros(self,titulo):
         retorno =self.verificador_de_estoque(titulo)
