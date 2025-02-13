@@ -35,9 +35,9 @@ class Livros: #Classe Livros
                 livro['status'] = 'emprestado'
                 livros.associar_leitor_ao_livro(nome,titulo)
                 return
-            
+         
         print("Infelizmente esse titulo não está disponivel para emprestimo")
-
+        return False
 
     def devolver_livros(self,titulo):
         retorno =self.verificador_de_estoque(titulo)
