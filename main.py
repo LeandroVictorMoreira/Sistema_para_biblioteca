@@ -1,6 +1,7 @@
 class Livros: #Classe Livros 
     def __init__(self):
         self.livros = []
+        self.livros_emprestados = []
 
     def mostrar_livros(self): 
         print(f"{self.livros}")
@@ -35,7 +36,7 @@ class Livros: #Classe Livros
                 livro['status'] = 'emprestado'
                 livros.associar_leitor_ao_livro(nome,titulo)
                 return
-         
+
         print("Infelizmente esse titulo não está disponivel para emprestimo")
          
 
@@ -54,11 +55,14 @@ class Livros: #Classe Livros
                 if 'emprestado_a' not in livro:
                     livro['emprestado_a'] = []
                 livro['emprestado_a'].append(nome)
-                print(self.livros) #tester
+        self.livros_emprestados.append(livro)
+        self.mostrar_livros_emprestados()
 
 
+    def mostrar_livros_emprestados(self):
+        print(self.livros_emprestados)
 
-
+        
 class Leitor:
     def __init__(self):
         self.leitores_cadastrados = []
