@@ -1,23 +1,18 @@
+from biblioteca import Livros, Leitor , Emprestimo
 
-
-        
-
-    
-
-
-
-#Parte da execução
-
+#Criando instâncias
 livros =Livros()
 leitor =Leitor()
-leitor.cadastrar_leitor("PedrinhoBH")
-livros.cadastrar_livros("Turma da Monica", "Mauricio de Souza", 1990)
-livros.emprestar_livros("Turma da Monica","PedrinhoBH",leitor,livros)
-#livros.devolver_livros("Turma da Monica")
 
-#Pessoa = Leitor("Pedrinho BH")
-#Pessoa.cadastrar_leitor()
-#Pessoa.mostrar_leitores_cadastrados()
+
+#Cadastro de Leitor
+leitor.cadastrar_leitor("PedrinhoBH")
+
+#Cadastro de Livros, incluindo titulo, autor e ano de Lançamento
+livros.cadastrar_livros("Turma da Monica", "Mauricio de Souza", 1990)
+
+#Realizando emprestimo de Livros, informando titulo, nome do leitor e chamando instancias
+livros.emprestar_livros("Turma da Monica","PedrinhoBH",leitor,livros)
 
 
 
