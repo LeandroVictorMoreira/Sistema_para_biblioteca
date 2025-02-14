@@ -1,2 +1,3 @@
 from .livros import Livros
-fro
+from .leitores import Leitor
+from .emprestimo import Emprestimo
