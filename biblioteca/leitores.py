@@ -18,14 +18,5 @@ class Leitor:
                 return True
         return False
 
-    #def associar_livro_ao_leitor(self,nome,titulo): # Função que faz vinculo do nome do livro ao leitor que está com ele no momento
-        nome = nome.strip().lower()
-
-        for leitor in self.leitores_cadastrados:
-            if leitor['nome'].strip().lower() == nome:
-                if 'livros_em_emprestimo' not in leitor:
-                    leitor['livros_em_emprestimo'] = []
-                leitor['livros_em_emprestimo'].append(titulo)
-                print(self.leitores_cadastrados)
-
+   
 
