@@ -1,7 +1,10 @@
+from .emprestimo import Emprestimo
+
 class Livros: #Classe Livros 
     def __init__(self):
         self.livros = []
         self.livros_emprestados = []
+        self.emprestimo = Emprestimo()
 
     def mostrar_livros(self): 
         print(f"{self.livros}")
@@ -34,7 +37,7 @@ class Livros: #Classe Livros
             if retorno == True and cadastro_leitor == True:
                 print(f"O Livro {livro['titulo']} está sendo emprestado para {nome}.")
                 livro['status'] = 'emprestado'
-                livros.associar_leitor_ao_livro(nome,titulo)
+                self.emprestimo.associar_leitor_ao_livro(nome,titulo)
                 return
 
         print("Infelizmente esse titulo não está disponivel para emprestimo")

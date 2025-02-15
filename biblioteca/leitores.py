@@ -23,7 +23,7 @@ class Leitor:
 
         for leitor in self.leitores_cadastrados:
             if leitor['nome'].strip().lower() == nome:
-                if 'livros_em_emprestimo' not in leitor:
+                if 'livros_em_emprestimo' not in leitor
                     leitor['livros_em_emprestimo'] = []
                 leitor['livros_em_emprestimo'].append(titulo)
                 print(self.leitores_cadastrados)
