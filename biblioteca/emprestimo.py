@@ -26,7 +26,7 @@ class Emprestimo:
         print(livros_emprestados)
 
 
-    def emprestar_livros (self,titulo,nome,leitor,livros):fdf
+    def emprestar_livros (self,titulo,nome,leitor,livros):
 
         cadastro_leitor = leitor.verifica_cadastro(nome) #chamada da função para verificar se está cadastrado
         retorno = livros.verificador_de_estoque(titulo)
