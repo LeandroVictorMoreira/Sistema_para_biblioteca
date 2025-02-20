@@ -6,6 +6,8 @@ leitor =Leitor()
 emprestimo = Emprestimo(livros)
 
 
+
+
 #Cadastro de Leitor
 leitor.cadastrar_leitor("PedrinhoBH")
 

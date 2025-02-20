@@ -2,7 +2,7 @@
 class Livros: #Classe Livros 
     def __init__(self):
         self.livros = []
-        self.livros_emprestados = []
+       
 
     def mostrar_livros(self): 
         print(f"{self.livros}")

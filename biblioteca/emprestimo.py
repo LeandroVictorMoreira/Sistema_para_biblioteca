@@ -1,7 +1,8 @@
 from biblioteca import Livros
 class Emprestimo:
     def __init__(self,livros):
-        self.livros = livros
+        self.livros = livros 
+        self.livros_emprestados = []
     
     def devolver_livros(self,titulo):
         retorno =self.verificador_de_estoque(titulo)
@@ -18,12 +19,12 @@ class Emprestimo:
                 if 'emprestado_a' not in livro:
                     livro['emprestado_a'] = []
                 livro['emprestado_a'].append(nome)
-            livros.livros_emprestados.append(livro)
+            self.livros_emprestados.append(livro)
             self.mostrar_livros_emprestados()
 
 
     def mostrar_livros_emprestados(self):
-        print(livros_emprestados)
+        print(self.livros_emprestados)
 
 
     def emprestar_livros (self,titulo,nome,leitor,livros):
