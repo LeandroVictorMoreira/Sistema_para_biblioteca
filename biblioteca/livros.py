@@ -1,10 +1,8 @@
-from .emprestimo import Emprestimo
 
 class Livros: #Classe Livros 
     def __init__(self):
         self.livros = []
         self.livros_emprestados = []
-        self.emprestimo = Emprestimo()
 
     def mostrar_livros(self): 
         print(f"{self.livros}")
@@ -27,20 +25,7 @@ class Livros: #Classe Livros
 
  
 
-    def emprestar_livros (self,titulo,nome,leitor,livros):
-
-        cadastro_leitor = leitor.verifica_cadastro(nome) #chamada da função para verificar se está cadastrado
-        retorno = self.verificador_de_estoque(titulo)
-        if cadastro_leitor == False:
-            print("Leitor não cadastrado, gentileza primeiro realizar o cadastro!")
-        for livro in self.livros:
-            if retorno == True and cadastro_leitor == True:
-                print(f"O Livro {livro['titulo']} está sendo emprestado para {nome}.")
-                livro['status'] = 'emprestado'
-                self.emprestimo.associar_leitor_ao_livro(nome,titulo)
-                return
-
-        print("Infelizmente esse titulo não está disponivel para emprestimo")
+   
          
 
     
