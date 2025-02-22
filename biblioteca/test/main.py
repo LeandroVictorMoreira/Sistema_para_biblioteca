@@ -9,3 +9,10 @@ database =  'sistema_para_biblioteca'
 )
 
 cursor = meudb.cursor()
+
+cursor.execute("SELECT * FROM alunos")
+
+meuresultado =cursor.fetchall()
+
+
+print(meuresultado)
