@@ -13,4 +13,16 @@ database =  'sistema_para_biblioteca'
 
 
 cursor = meudb.cursor() #Definição do cursor
-cursor.execute("CREATE DATABASE biblioteca_dados") #Criação do Banco
+cursor.execute("SHOW DATABASES LIKE'biblioteca_dados'") 
+
+
+resultado = cursor.fetchall()
+
+if resultado: #Função para verificar a existência do Banco de Dados
+    print("O banco de dados já existe.")
+else:
+    print("O banco de dados ainda não existe.")
+    cursor.execute("CREATE DATABASE biblioteca_dados")
+
+
+# Criação de uma nova tabela
