@@ -12,5 +12,5 @@ database =  'sistema_para_biblioteca'
 #Criar novo banco de dados
 
 
-cursor = meudb.cursor()
-cursor.execute("")
+cursor = meudb.cursor() #Definição do cursor
+cursor.execute("CREATE DATABASE biblioteca_dados") #Criação do Banco
