@@ -26,3 +26,8 @@ else:
 
 
 # Criação de uma nova tabela
+
+cursor.execute("CREATE TABLE leitores(Id INT AUTO_INCREMENT PRIMARY KEY), nome (VARCHAR(255))") 
+
+sql = "INSERT INTO clientes (nome) VALUE(%s)"
+values = ("João Pedro,")
