@@ -31,3 +31,6 @@ cursor.execute("CREATE TABLE leitores(Id INT AUTO_INCREMENT PRIMARY KEY), nome (
 
 sql = "INSERT INTO clientes (nome) VALUE(%s)"
 values = ("João Pedro,")
+
+
+cursos.execute()
