@@ -40,4 +40,4 @@ class Emprestimo:
                 self.associar_leitor_ao_livro(nome,titulo,livros)
                 return
 
-        print("Infelizmente esse titulo não está disponivel para emprestimo")ddd
+        print("Infelizmente esse titulo não está disponivel para emprestimo")
