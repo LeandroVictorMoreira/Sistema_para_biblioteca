@@ -34,3 +34,7 @@ values = ("João Pedro,")
 
 
 cursos.execute()
+
+
+#Necessita reconstrução do DB
+#Migração de tabela necessaria
