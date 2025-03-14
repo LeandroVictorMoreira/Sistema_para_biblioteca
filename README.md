@@ -57,3 +57,5 @@ emprestimo_manager.devolver_livro(livro1, leitor1)
 # Banco de Dados
 
 A integração é realizada junto a criação do banco de dados nomeado pessoas
+
+Integração parou na adição dos dados no db 
