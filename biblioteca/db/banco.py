@@ -1,15 +1,15 @@
-import _mysql_connector
+import mysql.connector
 
-meudb = _mysql_connector.connect (
+meudb = mysql.connector.connect (
     host ='localhost',
     user  = 'root',
-    passoword ='pass09',
+    password ='pass09',
     database = 'biblioteca_system'
 ) #Chamada do banco de dados
 
 cursor = meudb.cursor()
 
-cursor.execute ("Select * from alunos")
+cursor.execute ("Select * from leitores")
 
 on_db = cursor.fetchall()
 
